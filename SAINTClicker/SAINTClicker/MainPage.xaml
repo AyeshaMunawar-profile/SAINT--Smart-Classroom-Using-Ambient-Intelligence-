@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage NavigationPage.HasNavigationBar="False"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SAINTClicker"
+             x:Class="SAINTClicker.MainPage">
+    
+    <StackLayout Orientation="Vertical" VerticalOptions="Center"  >
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" >
+            <Label Text="WELCOME TO SAINT" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large" TextColor="Purple" FontAttributes="Bold"/>
+
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" >
+            <Button Text="Login" HorizontalOptions="Fill" VerticalOptions="Center" Clicked="Login_Clicked"/>
+            <Button Text="Signup" HorizontalOptions="Fill" VerticalOptions="Center" Clicked="Signup_Clicked"/>
+        </StackLayout>
+    </StackLayout>
+    
+</ContentPage>

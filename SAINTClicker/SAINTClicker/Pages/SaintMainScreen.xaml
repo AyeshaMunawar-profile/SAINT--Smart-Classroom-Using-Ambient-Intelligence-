@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:MarkupExtensions"
+    
+             x:Class="SAINTClicker.Pages.SaintMainScreen">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="WELCOME TO MAIN MENU" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large" TextColor="Purple" FontAttributes="Bold"/>
+            <Grid RowSpacing="5" ColumnSpacing="5">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+
+
+
+
+                <Button x:Name="createquiz" Text="CREATE QUIZ" BackgroundColor="#7219d1" Clicked="CreateQuiz_Clicked"
+                        Grid.Row="0" Grid.Column="0" 
+                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+
+                <Button x:Name="markattendance" Text="MARK ATTEND" BackgroundColor="#7219d1" Clicked="Attendance_Clicked" 
+                        Grid.Row="0" Grid.Column="1" 
+                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+                <Button x:Name="attemptquiz" Text="ATTEMPT QUIZ" BackgroundColor="#7219d1" Clicked="AttemptQuiz_Clicked"
+                        Grid.Row="1" Grid.Column="0" 
+                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+                <Button x:Name="graphs" Text="VIEW GRAPHS" BackgroundColor="#7219d1" Clicked="Graphs_Clicked"
+                        Grid.Row="1" Grid.Column="1" 
+                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+                <Button x:Name="profile" Text="VIEW PROFILE" BackgroundColor="#7219d1" Clicked="Profile_Clicked"
+                        Grid.Row="2" Grid.Column="0" 
+                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+            </Grid>
+
+          
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

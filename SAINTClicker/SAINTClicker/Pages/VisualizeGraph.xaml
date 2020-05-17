@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SAINTClicker.Pages.VisualizeGraph"
+             xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             x:Name="VisualizeGraph">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+                <Label Text="VISUALIZE QUIZ GRAPHS" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large" TextColor="Purple" FontAttributes="Bold"/>
+            
+                <ActivityIndicator IsRunning="{Binding Source={x:Reference VisualizeGraph}, Path=IsBusy}" Color="Purple">
+                <ActivityIndicator.HorizontalOptions>
+                    <OnPlatform x:TypeArguments="LayoutOptions" iOS="Center" Android="Center" WinPhone="FillAndExpand" />
+                </ActivityIndicator.HorizontalOptions>
+                <ActivityIndicator.VerticalOptions>
+                    <OnPlatform x:TypeArguments="LayoutOptions" iOS="Center" Android="Center" WinPhone="Fill" />
+                </ActivityIndicator.VerticalOptions>
+                <ActivityIndicator.Scale>
+                    <OnPlatform x:TypeArguments="x:Double" iOS="3" Android="1" WinPhone="4" />
+                </ActivityIndicator.Scale>
+            </ActivityIndicator>
+               
+
+                <Label Text="Donut Chart" />
+                <forms:ChartView x:Name="MyChart1" HeightRequest="150"/>
+                <Label Text="Bar Chart" />
+                <forms:ChartView x:Name="MyChart2" HeightRequest="150"/>
+                <Label Text="Point Chart" />
+                <forms:ChartView x:Name="MyChart3" HeightRequest="150"/>
+                <Label Text="Line Chart" />
+                <forms:ChartView x:Name="MyChart4" HeightRequest="150"/>
+            
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

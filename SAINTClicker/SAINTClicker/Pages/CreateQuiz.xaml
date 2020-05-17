@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SAINTClicker.Pages.CreateQuiz"
+             x:Name="CreateQuiz">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="5">
+            <StackLayout Orientation="Vertical">
+                <Label Text="CREATE A QUIZ" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large" TextColor="Purple" FontAttributes="Bold"/>
+                
+                
+                <Label Text="Registration Number"/>
+                <Label x:Name="RegNo" Text="{Binding myregno}"/>
+
+                <Label Text="Class Name"/>
+                <Label x:Name="MyClassName" Text="{Binding myclass}"/>
+
+                <Label Text="Course Name"/>
+                <Label x:Name="MyCourseName" Text="{Binding mycourse}"/>
+
+            </StackLayout>
+            
+            <StackLayout Orientation="Vertical">
+
+                <Entry x:Name="MyLectId"  Placeholder="Enter Lecture No" Text="{Binding myLectureNo}" />
+                <Entry x:Name="MyQuesId"  Placeholder="Enter Question ID" Text="{Binding questionId}" />
+                <Entry x:Name="MyQuesName"  Placeholder="Enter Question" Text="{Binding questionName}" />
+                
+                <StackLayout Orientation="Horizontal">
+                    <Entry x:Name="Op1"  Placeholder="Enter Option 1" Text="{Binding option1}" />
+                    <Entry x:Name="Op2"  Placeholder="Enter Option 2" Text="{Binding option2}" />
+                </StackLayout>
+                
+                <StackLayout Orientation="Horizontal">
+                    <Entry x:Name="Op3"  Placeholder="Enter Option 3" Text="{Binding option3}" />
+                    <Entry x:Name="Op4"  Placeholder="Enter Option 4" Text="{Binding option4}" />
+                </StackLayout>
+
+            </StackLayout>
+           
+            
+            <Label Text="Date Of Quiz"/>
+            <DatePicker/>
+           
+           
+           
+            <Button x:Name="create" Text="Create" TextColor="Purple" BackgroundColor="White" Clicked="CreateMyQuiz_Clicked"></Button>
+
+            <ActivityIndicator IsRunning="{Binding Source={x:Reference CreateQuiz}, Path=IsBusy}" Color="Purple">
+                <ActivityIndicator.HorizontalOptions>
+                    <OnPlatform x:TypeArguments="LayoutOptions" iOS="Center" Android="Center" WinPhone="FillAndExpand" />
+                </ActivityIndicator.HorizontalOptions>
+                <ActivityIndicator.VerticalOptions>
+                    <OnPlatform x:TypeArguments="LayoutOptions" iOS="Center" Android="Center" WinPhone="Fill" />
+                </ActivityIndicator.VerticalOptions>
+                <ActivityIndicator.Scale>
+                    <OnPlatform x:TypeArguments="x:Double" iOS="3" Android="1" WinPhone="4" />
+                </ActivityIndicator.Scale>
+            </ActivityIndicator>
+
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

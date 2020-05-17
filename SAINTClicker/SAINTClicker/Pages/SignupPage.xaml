@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage NavigationPage.HasNavigationBar="false"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SAINTClicker.SignupPage"
+             x:Name="SigninPage">
+    <ContentPage.Content >
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="5">
+            <Label Text="SIGNUP TO SAINT" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large" TextColor="Purple" FontAttributes="Bold"/>
+
+            <StackLayout Orientation="Horizontal">
+                <Entry x:Name="FirstName"  Placeholder="First Name" Text="{Binding firstName}" />
+                <Entry x:Name="Username"  Placeholder="User Name" Text="{Binding username}" />
+            </StackLayout>
+            <Entry x:Name="Role" Placeholder="Role(Instructor/Student)"  Text="{Binding role}" />
+            <Entry x:Name="Password"  Placeholder="Password" IsPassword="True" Text="{Binding password}" />
+           
+            <Entry x:Name="RegistrationNo"  Placeholder="Registration Number"  Text="{Binding regNo}" />
+            <Entry x:Name="ClassName"  Placeholder="Class Name"  Text="{Binding myclass}" />
+            <Entry x:Name="CourseName"  Placeholder="Course Name"  Text="{Binding mycourse}" />
+           
+            <Button x:Name="signup"  Text="Sign Up" Clicked="Signup_Clicked"></Button>
+            <Button Text="Already have account? Sign In" TextColor="Purple" BackgroundColor="White" Clicked="Signup_Clicked"></Button>
+
+            <ActivityIndicator IsRunning="{Binding Source={x:Reference SigninPage}, Path=IsBusy}" Color="Purple">
+                <ActivityIndicator.HorizontalOptions>
+                    <OnPlatform x:TypeArguments="LayoutOptions" iOS="Center" Android="Center" WinPhone="FillAndExpand" />
+                </ActivityIndicator.HorizontalOptions>
+                <ActivityIndicator.VerticalOptions>
+                    <OnPlatform x:TypeArguments="LayoutOptions" iOS="Center" Android="Center" WinPhone="Fill" />
+                </ActivityIndicator.VerticalOptions>
+                <ActivityIndicator.Scale>
+                    <OnPlatform x:TypeArguments="x:Double" iOS="3" Android="1" WinPhone="4" />
+                </ActivityIndicator.Scale>
+            </ActivityIndicator>
+
+
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

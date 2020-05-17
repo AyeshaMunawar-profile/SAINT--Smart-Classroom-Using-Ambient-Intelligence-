@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SAINTClicker.Pages.Profile">
+    <ContentPage.Content>
+        
+        <StackLayout>
+            <StackLayout Orientation="Vertical">
+                <Label x:Name="MyProfile"  Text="My Profile" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large" TextColor="Purple" FontAttributes="Bold"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <Label x:Name="Myid" Text="{Binding id}"
+                               FontAttributes="Bold" />
+            <Label x:Name="Myfname" Text="{Binding fname}"
+                               FontAttributes="Bold" />
+            <Label x:Name="Myuname" Text="{Binding uname}"
+                               FontAttributes="Bold" />
+            <Label x:Name="Mypw" Text="{Binding pw}"
+                               FontAttributes="Bold" />
+            <Label x:Name="Myregno" Text="{Binding regno}"
+                               FontAttributes="Bold" />
+            <Label x:Name="Myrole" Text="{Binding myrole}"
+                               FontAttributes="Bold" />
+            <Label x:Name="Myclass" Text="{Binding myclass}"
+                               FontAttributes="Bold" />
+            <Label x:Name="Mycourse" Text="{Binding mycourse}"
+                               FontAttributes="Bold" />
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

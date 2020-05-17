@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage NavigationPage.HasNavigationBar="false"
+              xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SAINTClicker.LoginPage" 
+             x:Name="LoginPage"
+             >
+   
+        <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="20"
+                         VerticalOptions="Center">
+            
+            <Label Text="LOGIN TO SAINT" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large" TextColor="Purple" FontAttributes="Bold"/>
+            <Entry x:Name="Username"  Placeholder="User Name" Text="{Binding username}" />
+
+            <Entry x:Name="Password" 
+                   Placeholder="Password" IsPassword="True" Text="{Binding password}" />
+
+
+
+            <Button x:Name="loginbutton" Text="Login" TextColor="White"
+                         Clicked="LoginButton_Clicked"/>
+
+
+            <ActivityIndicator IsRunning="{Binding Source={x:Reference LoginPage}, Path=IsBusy}" Color="Purple">
+                <ActivityIndicator.HorizontalOptions>
+                    <OnPlatform x:TypeArguments="LayoutOptions" iOS="Center" Android="Center" WinPhone="FillAndExpand" />
+                </ActivityIndicator.HorizontalOptions>
+                <ActivityIndicator.VerticalOptions>
+                    <OnPlatform x:TypeArguments="LayoutOptions" iOS="Center" Android="Center" WinPhone="Fill" />
+                </ActivityIndicator.VerticalOptions>
+                <ActivityIndicator.Scale>
+                    <OnPlatform x:TypeArguments="x:Double" iOS="3" Android="3" WinPhone="4" />
+                </ActivityIndicator.Scale>
+            </ActivityIndicator>
+
+
+
+
+
+
+        </StackLayout>
+
+
+    </ContentPage.Content>
+   
+</ContentPage>

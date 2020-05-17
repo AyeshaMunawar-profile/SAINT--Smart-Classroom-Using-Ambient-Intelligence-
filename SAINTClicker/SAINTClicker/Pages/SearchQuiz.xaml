@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SAINTClicker.Pages.SearchQuiz"
+             x:Name="SearchQuiz">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Spacing="20" Padding="20"
+                         VerticalOptions="Center" Orientation="Vertical">
+                <Label Text="SEARCH FOR YOUR QUIZ" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large" TextColor="Purple" FontAttributes="Bold"/>
+                
+                <Entry x:Name="ClassName"  Placeholder="Enter your Class(i-e BESE2)" Text="{Binding myclass}" />
+
+                <Entry x:Name="CourseName" 
+                   Placeholder="Enter your Course(i-e SRE)"  Text="{Binding mycourse}" />
+
+                <Entry x:Name="LectId" 
+                   Placeholder="Enter your Lecture ID"  Text="{Binding lectid}" />
+
+                <Button x:Name="submit" Text="Submit" TextColor="White"
+                         Clicked="SearchQuiz_Clicked"/>
+
+                <ActivityIndicator IsRunning="{Binding Source={x:Reference SearchQuiz}, Path=IsBusy}" Color="Purple">
+                    <ActivityIndicator.HorizontalOptions>
+                        <OnPlatform x:TypeArguments="LayoutOptions" iOS="Center" Android="Center" WinPhone="FillAndExpand" />
+                    </ActivityIndicator.HorizontalOptions>
+                    <ActivityIndicator.VerticalOptions>
+                        <OnPlatform x:TypeArguments="LayoutOptions" iOS="Center" Android="Center" WinPhone="Fill" />
+                    </ActivityIndicator.VerticalOptions>
+                    <ActivityIndicator.Scale>
+                        <OnPlatform x:TypeArguments="x:Double" iOS="3" Android="1" WinPhone="4" />
+                    </ActivityIndicator.Scale>
+                </ActivityIndicator>
+
+
+
+            </StackLayout>
+            
+            
+            
+            
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

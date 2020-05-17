@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SAINTClicker.Pages.Attempt_Quiz"
+             x:Name="AttemptQuiz">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout Spacing="30" Padding="30"
+                         VerticalOptions="Center" Orientation="Vertical">
+                <Label Text="LOOKUP FOR AVAILABLE QUIZZES" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large" TextColor="Purple" FontAttributes="Bold"/>
+                
+                <Label x:Name="myquestitle" Text="Question"/>
+                <Label x:Name="myquesid" Text="{Binding quesId }"/>
+                <Label x:Name="myquesname" Text="{Binding quesName }"/>
+
+
+
+            </StackLayout>
+
+
+            <StackLayout Spacing="20" Padding="20"
+                         VerticalOptions="Center" Orientation="Vertical">
+
+                    <Picker x:Name="AnswerPicker" Title="Select an answer" 
+                            TextColor="Purple"  SelectedIndexChanged="AnswerPicker_SelectedIndexChanged"/>
+
+                <Button x:Name="submit" Text="SUBMIT" Clicked="Submit_Clicked" />
+
+                <ActivityIndicator IsRunning="{Binding Source={x:Reference AttemptQuiz}, Path=IsBusy}" Color="Purple">
+                    <ActivityIndicator.HorizontalOptions>
+                        <OnPlatform x:TypeArguments="LayoutOptions" iOS="Center" Android="Center" WinPhone="FillAndExpand" />
+                    </ActivityIndicator.HorizontalOptions>
+                    <ActivityIndicator.VerticalOptions>
+                        <OnPlatform x:TypeArguments="LayoutOptions" iOS="Center" Android="Center" WinPhone="Fill" />
+                    </ActivityIndicator.VerticalOptions>
+                    <ActivityIndicator.Scale>
+                        <OnPlatform x:TypeArguments="x:Double" iOS="3" Android="2" WinPhone="4" />
+                    </ActivityIndicator.Scale>
+                </ActivityIndicator>
+
+
+
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
